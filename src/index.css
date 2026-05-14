@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --color-cream: #F8F6F0;
+    --color-ivory: #FFFEF9;
+    --color-gold: #C9A962;
+    --color-charcoal: #2C2C2C;
+    --color-stone: #8B8680;
+    --color-dark: #1A1814;
+    --color-darkgold: #B8860B;
+    --color-champagne: #D4AF37;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-dark);
+    color: #E8E6E3;
+  }
+
+  ::selection {
+    background-color: var(--color-darkgold);
+    color: white;
+  }
+}
+
+@layer components {
+  .editorial-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .editorial-subheading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .gold-accent {
+    color: var(--color-gold);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .bg-ivory {
+    background-color: var(--color-ivory);
+  }
+
+  .text-charcoal {
+    color: var(--color-charcoal);
+  }
+
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-transparent border border-current text-sm tracking-[0.2em] uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-charcoal);
+    color: var(--color-cream);
+  }
+
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+/* Editorial Grid Lines */
+.editorial-line {
+  @apply absolute w-px opacity-30;
+  background-color: var(--color-gold);
+}
+
+/* Parallax Effect Container */
+.parallax-container {
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Image Hover Effects */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Decorative Elements */
+.decorative-diamond {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+/* Scroll Progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+  z-index: 100;
+  transition: width 0.1s;
+}
